@@ -1,0 +1,18 @@
+@import '~@angular/material/theming';
+@import 'palette';
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$acf-theme-primary: mat-palette($acf-palette-primary);
+$acf-theme-accent: mat-palette($mat-pink, A200, A100, A400); // TODO override this with custom accent palette
+$acf-theme-warn: mat-palette($mat-deep-orange); // TODO override this with custom accent palette
+// MATERIAL DESIGN - PALETTE GENERATOR http://mcg.mbitson.com
+$acf-theme: mat-light-theme($acf-theme-primary, $acf-theme-accent, $acf-theme-warn);
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($acf-theme);

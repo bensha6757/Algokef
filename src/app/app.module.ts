@@ -8,6 +8,10 @@ import { SideNavContentComponent } from './components/side-nav-content/side-nav-
 import { AppPageComponent } from './pages/app-page/app-page.component';
 import { PortfolioPageComponent } from './pages/portfolio-page/portfolio-page.component';
 import { ServicesPageComponent } from './pages/services-page/services-page.component';
+import { EventCardComponent } from "./cards/event-card.component";
+import {MatCardModule} from '@angular/material/card';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule} from "@angular/material/button";
 
 @NgModule({
   declarations: [
@@ -17,11 +21,15 @@ import { ServicesPageComponent } from './pages/services-page/services-page.compo
     SideNavContentComponent,
     AppPageComponent,
     PortfolioPageComponent,
-    ServicesPageComponent
+    ServicesPageComponent,
+    EventCardComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatCardModule,
+    BrowserAnimationsModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
