@@ -10,9 +10,8 @@ import { Router } from '@angular/router';
 export class SideNavContentComponent implements OnInit {
 
   navItems = [
-    { label: 'Apps', route: '/apps'},
-    { label: 'Portfolio', route: '/portfolio'},
-    { label: 'Services', route: '/services'}
+    { label: 'Events', route: '/events'},
+    { label: 'Post A Pic', route: '/images'}
   ];
 
   constructor(private router: Router) { }

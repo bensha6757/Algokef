@@ -5,13 +5,14 @@ import { AppComponent } from './app.component';
 import { SideNavComponent } from './components/side-nav/side-nav.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SideNavContentComponent } from './components/side-nav-content/side-nav-content.component';
-import { AppPageComponent } from './pages/app-page/app-page.component';
+import { EventsPageComponent } from './pages/app-page/events-page.component';
 import { PortfolioPageComponent } from './pages/portfolio-page/portfolio-page.component';
-import { ServicesPageComponent } from './pages/services-page/services-page.component';
+import { ImagesPageComponent } from './pages/images-page/images-page.component';
 import { EventCardComponent } from "./cards/event-card.component";
 import { MatCardModule } from '@angular/material/card';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule } from "@angular/material/button";
+import {MatButtonModule} from "@angular/material/button";
+import {HttpClientModule} from "@angular/common/http";
 import { MatIconModule } from '@angular/material/icon';
 import { DialogContentExample, DialogContentExampleDialog } from '../app/components/dialog-content-example/dialog-content-example';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -28,9 +29,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SideNavComponent,
     HeaderComponent,
     SideNavContentComponent,
-    AppPageComponent,
+    EventsPageComponent,
     PortfolioPageComponent,
-    ServicesPageComponent,
+    ImagesPageComponent,
     EventCardComponent,
     DialogContentExample,
     DialogContentExampleDialog
@@ -41,6 +42,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatCardModule,
     BrowserAnimationsModule,
     MatButtonModule,
+    HttpClientModule,
     MatIconModule,
     MatDialogModule,
     MatNativeDateModule,

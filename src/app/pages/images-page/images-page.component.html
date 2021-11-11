@@ -1,0 +1,12 @@
+<div >
+  <div class="logo">
+  </div>
+  <h1 class="page-title">Post A Pic</h1>
+  <ul *ngIf="images.length > 0">
+    <span class="pics" *ngFor="let image of images">
+      <h4>{{image.title}}</h4>
+      <img class="cube" [src]="image.imgUrl" [alt]="image.title">
+    </span>
+  </ul>
+  <h1 *ngIf="images.length === 0">Post some pictures to see them here</h1>
+</div>
