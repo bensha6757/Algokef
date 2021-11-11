@@ -1,23 +1,23 @@
 <mat-card class="card">
-  <mat-card-title class="event-name">{{eventName}}</mat-card-title>
+  <mat-card-title class="event-name">{{event.eventName}}</mat-card-title>
   <mat-card-content>
     <dl>
       <dt>
         <mat-icon class="event-field-icon">calendar_today</mat-icon>
         <span class="event-field date">
-          {{date.toLocaleDateString()}}
+          {{event.date.toLocaleDateString()}}
         </span>
       </dt>
       <dt>
         <mat-icon class="event-field-icon">access_time</mat-icon>
         <span class="event-field time">
-          {{time}}
+          {{event.time}}
         </span>
       </dt>
       <dt>
         <mat-icon class="event-field-icon">location_on</mat-icon>
         <span class="event-field location">
-          {{location}}
+          {{event.location}}
         </span>
       </dt>
     </dl>
@@ -26,8 +26,12 @@
     <span class="attendance">
       {{numberOfAttendingMembers}} attending
     </span>
-    <button class="ben" mat-mini-fab color="primary" aria-label="attending">
-      <mat-icon (click)="attendingChecked()" class="white-icon">{{attendingIcon}}</mat-icon>
+    <button mat-mini-fab
+    color="primary"
+    aria-label="attending"
+    [ngClass]="{'white-icon' : !toggle, 'black-icon': toggle}"
+    (click)="attendingChecked()">
+      <mat-icon class="white-icon">{{attendingIcon}}</mat-icon>
     </button>
   </mat-card-actions>
 </mat-card>
