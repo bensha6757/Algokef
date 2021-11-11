@@ -1,10 +1,47 @@
-<h2 mat-dialog-title>Install Angular</h2>
-<mat-dialog-content class="mat-typography">
-  <h3>Create event</h3>
-  
-
+<mat-dialog-content class="dialog-content">
+  <div class="wrapper">
+    <form (submit)="askSave()" [formGroup]="formGroup">
+      <h1>Create Event</h1>
+        <h5>hit me baby one more time !</h5>
+        <hr class="sep"/>
+        <div class="group">
+          <input type="text"
+                required="required"
+                formControlName="eventName"/>
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label>Event Name</label>
+        </div>
+        <div class="group">
+          <mat-form-field appearance="none">
+            <mat-label>Date</mat-label>
+            <input matInput [matDatepicker]="picker"
+                  readonly="readonly"
+                  formControlName="date">
+            <mat-datepicker-toggle matSuffix [for]="picker" color="primary"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+        <div class="group">
+          <input type="text"
+                required="required"
+                formControlName="time"/>
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label>Time</label>
+        </div>
+        <div class="group">
+          <input type="text"
+                required="required"
+                formControlName="location"/>
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label>Location</label>
+        </div>
+        <mat-dialog-actions align="end">
+          <button mat-button mat-dialog-close (click)="close()">Cancel</button>
+          <button mat-button [mat-dialog-close]="true" [disabled]="!formGroup.valid" type="submit">Create</button>
+        </mat-dialog-actions>
+    </form>
+</div>
 </mat-dialog-content>
-<mat-dialog-actions align="end">
-  <button mat-button mat-dialog-close>Cancel</button>
-  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Install</button>
-</mat-dialog-actions>

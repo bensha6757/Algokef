@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventsPageComponent implements OnInit {
 
+  public events = [];
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onNewEventCard(eventCard: any){
+    this.events = [...this.events, eventCard];
   }
 
 }

@@ -1,5 +1,4 @@
 import {Component, Input} from '@angular/core';
-import {Time} from "@angular/common";
 
 /**
  * @title Card with sub-title
@@ -7,14 +6,24 @@ import {Time} from "@angular/common";
 @Component({
   selector: 'event-card',
   templateUrl: 'event-card.component.html',
+  styleUrls: ['./event-card.component.css']
 })
 export class EventCardComponent {
-  @Input() eventName: string = "event example";
-  @Input() date: Date = new Date("1/1/2021");
-  @Input() time: Time = {hours: 10, minutes: 1};
-  @Input() location: string = "PingPong room";
+  @Input() event;
 
-  longText = `The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog
-  from Japan. A small`;
+  attendingIcon = "check_circle_outline";
+  attendingIconChecked: boolean = false;
 
+  numberOfAttendingMembers: number = 0;
+
+  attendingChecked(){
+    this.attendingIconChecked = !this.attendingIconChecked;
+    if (this.attendingIconChecked){
+      this.numberOfAttendingMembers++;
+      this.attendingIcon = "check_circle";
+    } else {
+      this.numberOfAttendingMembers--;
+      this.attendingIcon = "check_circle_outline";
+    }
+  }
 }

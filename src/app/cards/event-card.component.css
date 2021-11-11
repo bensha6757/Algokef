@@ -1,0 +1,53 @@
+.white-icon {
+  color: limegreen;
+}
+
+mat-card.mat-card.mat-focus-indicator.card {
+  width: 210px;
+}
+
+mat-card-actions.mat-card-actions {
+  text-align: right;
+}
+
+span.attendance {
+  padding-right: 10px;
+  font-size: 14px;
+}
+
+span.event-field {
+  margin-top: 5px;
+  padding-left: 8px;
+}
+
+dt {
+  display: flex;
+  padding-bottom: 12px;
+}
+
+mat-card-title.mat-card-title {
+  padding-bottom: 10px;
+}
+
+mat-card-title.mat-card-title.event-name{
+  color: #004566;
+}
+
+mat-icon.mat-icon.notranslate.event-field-icon.material-icons.mat-icon-no-color{
+  color: #1fa8e9;
+}
+
+.black-icon {
+  color: black;
+}
+.gray-back{
+  background-color: #dddbdb;
+}
+
+.blue-icon {
+  color: #0a7dd9;
+}
+
+.blue-back {
+  background-color: #b8e0f3;
+}

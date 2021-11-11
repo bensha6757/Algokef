@@ -4,6 +4,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { EventsPageComponent } from './pages/app-page/events-page.component';
 import { PortfolioPageComponent } from './pages/portfolio-page/portfolio-page.component';
 import { ImagesPageComponent } from './pages/images-page/images-page.component';
+import { AppComponent } from './app.component';
+
 
 const routes: Routes = [
   {
