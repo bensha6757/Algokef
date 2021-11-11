@@ -9,12 +9,24 @@ import {Component, Input} from '@angular/core';
   styleUrls: ['./event-card.component.css']
 })
 export class EventCardComponent {
-  @Input() event;
+  @Input() eventNote;
 
   attendingIcon = "check_circle_outline";
   attendingIconChecked: boolean = false;
 
   numberOfAttendingMembers: number = 0;
+
+  ngOnInit(){
+    if (this.eventNote.eventName === 'Ping Pong'){
+      this.numberOfAttendingMembers += 3;
+    }
+    if (this.eventNote.eventName === 'Coffee'){
+      this.numberOfAttendingMembers += 5;
+    }
+    if (this.eventNote.eventName === 'Beer After Work'){
+      this.numberOfAttendingMembers += 10;
+    }
+  }
 
   attendingChecked(){
     this.attendingIconChecked = !this.attendingIconChecked;

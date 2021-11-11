@@ -2,12 +2,10 @@
 from flask import Flask
 from flask import jsonify
 from flask import request
-from flask_pymongo import PyMongo
 from pymongo import MongoClient
 app = Flask(__name__)
 app.config['MONGO_DBNAME'] = 'local'
 app.config['MONGO_URI'] = 'mongodb://localhost:27017/local'
-mongo = PyMongo(app)
 client = MongoClient('localhost', 27017)
 db = client['local']
 collection = db['startup_log']
@@ -20,13 +18,13 @@ def get_all_stars():
   return jsonify({'result' : output})
 @app.route('/update', methods=['POST'])
 def update():
+  star = collection
   event_name = request.json['event_name']
   date = request.json['date']
   time = request.json['time']
   attend = request.json['attend'][-1]
-  star = mongo.db.startup_log
   event = collection.find_one({"event_name": event_name,"date":date,"time": time})
-  star.update_one({"events": event},{"$push":  {"attenders":  attend } }
+  star.update({"events": event},{'$inc': {'attenders': 1}}
 )
 @app.route('/post_data', methods=['POST'])
 def add_star():

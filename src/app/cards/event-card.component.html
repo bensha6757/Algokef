@@ -1,23 +1,23 @@
 <mat-card class="card">
-  <mat-card-title class="event-name">{{event.eventName}}</mat-card-title>
+  <mat-card-title class="event-name">{{eventNote.eventName}}</mat-card-title>
   <mat-card-content>
     <dl>
       <dt>
         <mat-icon class="event-field-icon">calendar_today</mat-icon>
         <span class="event-field date">
-          {{event.date.toLocaleDateString()}}
+          {{eventNote.date.toLocaleDateString()}}
         </span>
       </dt>
       <dt>
         <mat-icon class="event-field-icon">access_time</mat-icon>
         <span class="event-field time">
-          {{event.time}}
+          {{eventNote.time}}
         </span>
       </dt>
       <dt>
         <mat-icon class="event-field-icon">location_on</mat-icon>
         <span class="event-field location">
-          {{event.location}}
+          {{eventNote.location}}
         </span>
       </dt>
     </dl>

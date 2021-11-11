@@ -15,7 +15,10 @@ export class ImagesPageComponent implements OnInit {
     {imgUrl: 'assets/images/guyBagi.jpeg', title : 'mr. World Wide'},
     {imgUrl: 'assets/images/daniel.jpeg', title : 'Poofing out...'},
     {imgUrl: 'assets/images/other-team.jpeg', title : 'Algomaning'},
-    {imgUrl: 'assets/images/massage.jpeg', title: 'ooohh yeah'}];
+    {imgUrl: 'assets/images/massage.jpeg', title: 'ooohh yeah'},
+    {imgUrl: 'assets/images/show.jpeg', title: 'The improvising masters'},
+    {imgUrl: 'assets/images/judges.jpeg', title: 'My the best team win'}
+  ];
 
 
   selectedFile = null;
