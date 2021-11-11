@@ -12,6 +12,15 @@ import { EventCardComponent } from "./cards/event-card.component";
 import {MatCardModule} from '@angular/material/card';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from "@angular/material/button";
+import {DialogContentExample, DialogContentExampleDialog} from '../app/components/dialog-content-example/dialog-content-example';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,14 +31,25 @@ import {MatButtonModule} from "@angular/material/button";
     AppPageComponent,
     PortfolioPageComponent,
     ServicesPageComponent,
-    EventCardComponent
+    EventCardComponent,
+    DialogContentExample,
+    DialogContentExampleDialog
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatCardModule,
     BrowserAnimationsModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDialogModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatMenuModule,
+    MatIconModule,
+    FormsModule,
+    ReactiveFormsModule    
   ],
   providers: [],
   bootstrap: [AppComponent]
