@@ -4,26 +4,10 @@ import { HomeComponent } from './pages/home/home.component';
 import { AppPageComponent } from './pages/app-page/app-page.component';
 import { PortfolioPageComponent } from './pages/portfolio-page/portfolio-page.component';
 import { ServicesPageComponent } from './pages/services-page/services-page.component';
-import { AppComponent } from './app.component';  
-import { MicrosoftLoginGuard } from './microsoft-login.guard';
-import { RestrictedPageComponent } from './restricted-page/restricted-page.component';
-import { PublicPageComponent } from './public-page/public-page.component';
+import { AppComponent } from './app.component';
 
 
 const routes: Routes = [
-  {
-    path :'public-page',
-    component: PublicPageComponent
-  },
-  {
-    path :'restricted-page',
-    component: RestrictedPageComponent,
-     canActivate: [MicrosoftLoginGuard]
-  },
-  {
-    path: '**', 
-  component: PublicPageComponent
-},
   {
     path: 'home',
     component: HomeComponent
@@ -42,7 +26,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/app',
+    redirectTo: '/home',
     pathMatch: 'full'
   }
 ];
