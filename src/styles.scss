@@ -211,5 +211,9 @@ body {
 
   .mat-dialog-actions span.mat-button-wrapper {
     color: #2196F3;
-}
+  }
+
+  .mat-dialog-content {
+        overflow: hidden;
+  }
 }
