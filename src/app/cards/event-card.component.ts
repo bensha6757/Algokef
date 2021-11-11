@@ -7,14 +7,28 @@ import {Time} from "@angular/common";
 @Component({
   selector: 'event-card',
   templateUrl: 'event-card.component.html',
+  styleUrls: ['./event-card.component.css']
 })
 export class EventCardComponent {
   @Input() eventName: string = "event example";
   @Input() date: Date = new Date("1/1/2021");
-  @Input() time: Time = {hours: 10, minutes: 1};
+  @Input() time: string = "10:00";
   @Input() location: string = "PingPong room";
 
-  longText = `The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog
-  from Japan. A small`;
+  attendingIcon = "thumb_up";
+  attendingIconChecked: boolean = false;
 
+  numberOfAttendingMembers: number = 0;
+
+  attendingChecked(){
+    this.attendingIconChecked = !this.attendingIconChecked;
+    if (this.attendingIconChecked){
+      this.attendingIcon = "thumb_up";
+      this.numberOfAttendingMembers++;
+    } else {
+      this.attendingIcon = "thumb_up";
+      this.numberOfAttendingMembers--;
+    }
+
+  }
 }
