@@ -9,11 +9,11 @@ import { AppPageComponent } from './pages/app-page/app-page.component';
 import { PortfolioPageComponent } from './pages/portfolio-page/portfolio-page.component';
 import { ServicesPageComponent } from './pages/services-page/services-page.component';
 import { EventCardComponent } from "./cards/event-card.component";
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatButtonModule} from "@angular/material/button";
-import {MatIconModule} from '@angular/material/icon';
-import {DialogContentExample, DialogContentExampleDialog} from '../app/components/dialog-content-example/dialog-content-example';
+import { MatButtonModule } from "@angular/material/button";
+import { MatIconModule } from '@angular/material/icon';
+import { DialogContentExample, DialogContentExampleDialog } from '../app/components/dialog-content-example/dialog-content-example';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
@@ -49,9 +49,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatInputModule,
     MatMenuModule,
     FormsModule,
-    ReactiveFormsModule    
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

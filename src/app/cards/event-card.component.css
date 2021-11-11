@@ -1,5 +1,5 @@
 .white-icon {
-  color: white;
+  color: limegreen;
 }
 
 mat-card.mat-card.mat-focus-indicator.card {
@@ -37,6 +37,17 @@ mat-icon.mat-icon.notranslate.event-field-icon.material-icons.mat-icon-no-color{
   color: #1fa8e9;
 }
 
-.black-icon{
-  background-color: black;
+.black-icon {
+  color: black;
+}
+.gray-back{
+  background-color: #dddbdb;
+}
+
+.blue-icon {
+  color: #0a7dd9;
+}
+
+.blue-back {
+  background-color: #b8e0f3;
 }

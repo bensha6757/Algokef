@@ -11,9 +11,8 @@ import {Component, Input} from '@angular/core';
 export class EventCardComponent {
   @Input() event;
 
-  attendingIcon = "thumb_up";
+  attendingIcon = "check_circle_outline";
   attendingIconChecked: boolean = false;
-  toggle = false;
 
   numberOfAttendingMembers: number = 0;
 
@@ -21,9 +20,10 @@ export class EventCardComponent {
     this.attendingIconChecked = !this.attendingIconChecked;
     if (this.attendingIconChecked){
       this.numberOfAttendingMembers++;
+      this.attendingIcon = "check_circle";
     } else {
       this.numberOfAttendingMembers--;
+      this.attendingIcon = "check_circle_outline";
     }
-    this.toggle = !this.toggle;
   }
 }
