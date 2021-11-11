@@ -20,8 +20,9 @@ export class DialogContentExample {
     const dialogRef = this.dialog.open(DialogContentExampleDialog, { panelClass: 'custom-dialog-container' });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-      this.formGroupEventEmitter.emit(result);
+      if (result){
+        this.formGroupEventEmitter.emit(result);
+      }
     });
   }
 }
@@ -48,6 +49,9 @@ export class DialogContentExampleDialog {
 
   askSave() {
     this.dialogRef.close(this.formGroup.value);
+  }
+  close(){
+    this.dialogRef.close();
   }
 
 }

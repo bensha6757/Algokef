@@ -29,9 +29,9 @@
     <button mat-mini-fab
     color="primary"
     aria-label="attending"
-    [ngClass]="{'white-icon' : !toggle, 'black-icon': toggle}"
+    [ngClass]="{'blue-back' : attendingIconChecked, 'gray-back': !attendingIconChecked}"
     (click)="attendingChecked()">
-      <mat-icon class="white-icon">{{attendingIcon}}</mat-icon>
+      <mat-icon [ngClass]="{'blue-icon' : attendingIconChecked, 'black-icon': !attendingIconChecked}">{{attendingIcon}}</mat-icon>
     </button>
   </mat-card-actions>
 </mat-card>
