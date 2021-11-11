@@ -1,6 +1,6 @@
-import {Component} from '@angular/core';
+import {Component, EventEmitter, Inject, Output} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import {MatDialog} from '@angular/material/dialog';
+import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from '@angular/material/dialog';
 
 /**
  * @title Dialog with header, scrollable content and actions
@@ -12,13 +12,16 @@ import {MatDialog} from '@angular/material/dialog';
 
 })
 export class DialogContentExample {
+  @Output("event_card_created") public formGroupEventEmitter: EventEmitter<any> = new EventEmitter<any>();
+
   constructor(public dialog: MatDialog) {}
 
   openDialog() {
-    const dialogRef = this.dialog.open(DialogContentExampleDialog,{ panelClass: 'custom-dialog-container' });
+    const dialogRef = this.dialog.open(DialogContentExampleDialog, { panelClass: 'custom-dialog-container' });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
+      this.formGroupEventEmitter.emit(result);
     });
   }
 }
@@ -30,8 +33,10 @@ export class DialogContentExample {
 export class DialogContentExampleDialog {
   formGroup: FormGroup;
 
-  constructor(private fb: FormBuilder) { }
-  
+  constructor(private fb: FormBuilder,
+              public dialogRef: MatDialogRef<DialogContentExampleDialog>,
+              @Inject(MAT_DIALOG_DATA) public event: any) { }
+
   ngOnInit() {
     this.formGroup = this.fb.group({
       eventName: ['', Validators.required],
@@ -42,17 +47,7 @@ export class DialogContentExampleDialog {
   }
 
   askSave() {
-    console.log('save plz');
-    console.log(this.formGroup.value.eventName);
-    console.log(this.formGroup.value.date.toLocaleDateString());
-    console.log(this.formGroup.value.time);
-    console.log(this.formGroup.value.location);
-
+    this.dialogRef.close(this.formGroup.value);
   }
 
 }
-
-
-/**  Copyright 2021 Google LLC. All Rights Reserved.
-    Use of this source code is governed by an MIT-style license that
-    can be found in the LICENSE file at https://angular.io/license */
