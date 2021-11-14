@@ -2,12 +2,19 @@
     font-size: 2em;
     padding: 18px;
     cursor: pointer;
+    margin-top: 8px;
 }
 
 img{
-  width: 400px;
-  height: 180px;
-  padding-top: 10px;
-  padding-right: 30px;
-  padding-bottom: 10px;
+  width: 180px;
+  height: 85px;
+
+}
+
+.header-menu {
+  display: flex;
+}
+
+.app-page {
+  padding-top: 0;
 }

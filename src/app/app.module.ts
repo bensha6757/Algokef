@@ -9,10 +9,19 @@ import { EventsPageComponent } from './pages/app-page/events-page.component';
 import { PortfolioPageComponent } from './pages/portfolio-page/portfolio-page.component';
 import { ImagesPageComponent } from './pages/images-page/images-page.component';
 import { EventCardComponent } from "./cards/event-card.component";
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from "@angular/material/button";
 import {HttpClientModule} from "@angular/common/http";
+import { MatIconModule } from '@angular/material/icon';
+import { DialogContentExample, DialogContentExampleDialog } from '../app/components/dialog-content-example/dialog-content-example';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatMenuModule } from '@angular/material/menu';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,7 +32,9 @@ import {HttpClientModule} from "@angular/common/http";
     EventsPageComponent,
     PortfolioPageComponent,
     ImagesPageComponent,
-    EventCardComponent
+    EventCardComponent,
+    DialogContentExample,
+    DialogContentExampleDialog
   ],
   imports: [
     BrowserModule,
@@ -31,9 +42,19 @@ import {HttpClientModule} from "@angular/common/http";
     MatCardModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    HttpClientModule
+    HttpClientModule,
+    MatIconModule,
+    MatDialogModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatMenuModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

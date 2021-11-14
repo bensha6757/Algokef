@@ -1,11 +1,37 @@
-<mat-card class="example-card">
-  <mat-card-title>{{eventName}}</mat-card-title>
+<mat-card class="card">
+  <mat-card-title class="event-name">{{eventNote.eventName}}</mat-card-title>
   <mat-card-content>
-    <p>This card indeterminates progress bar.</p>
-    <p>{{longText}}</p>
+    <dl>
+      <dt>
+        <mat-icon class="event-field-icon">calendar_today</mat-icon>
+        <span class="event-field date">
+          {{eventNote.date.toLocaleDateString()}}
+        </span>
+      </dt>
+      <dt>
+        <mat-icon class="event-field-icon">access_time</mat-icon>
+        <span class="event-field time">
+          {{eventNote.time}}
+        </span>
+      </dt>
+      <dt>
+        <mat-icon class="event-field-icon">location_on</mat-icon>
+        <span class="event-field location">
+          {{eventNote.location}}
+        </span>
+      </dt>
+    </dl>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-button>LIKE</button>
-    <button mat-button>SHARE</button>
+    <span class="attendance">
+      {{numberOfAttendingMembers}} attending
+    </span>
+    <button mat-mini-fab
+    color="primary"
+    aria-label="attending"
+    [ngClass]="{'blue-back' : attendingIconChecked, 'gray-back': !attendingIconChecked}"
+    (click)="attendingChecked()">
+      <mat-icon [ngClass]="{'blue-icon' : attendingIconChecked, 'black-icon': !attendingIconChecked}">{{attendingIcon}}</mat-icon>
+    </button>
   </mat-card-actions>
 </mat-card>

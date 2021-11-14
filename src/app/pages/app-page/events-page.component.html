@@ -1,4 +1,8 @@
 <div class="apps-page app-page">
-    <h1>Apps Page</h1>
-    <div>This is where apps content will be displayed.</div>
+  <div class="dialog-button">
+    <dialog-content-example (event_card_created)="onNewEventCard($event)"></dialog-content-example>
+  </div>
+  <div class="events" *ngFor="let event of events">
+    <event-card [eventNote]="event"></event-card>
+  </div>
 </div>
